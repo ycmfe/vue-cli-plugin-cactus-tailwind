@@ -28,16 +28,6 @@ function readPostcssConfig(generator) {
   return {}
 }
 
-function generateConfig(option) {
-  const args = ['init']
-  if (option === 'full') {
-    args.push('--full')
-  }
-  const { spawnSync } = require('child_process')
-  const tailwind = path.resolve('./node_modules/.bin/tailwindcss')
-  spawnSync(tailwind, args, { shell: process.platform === 'win32' })
-}
-
 module.exports = (api, options) => {
   const postcss = readPostcssConfig(api.generator)
   const configs = {
@@ -56,22 +46,4 @@ module.exports = (api, options) => {
 
   api.injectImports(api.entryFile, `import '@/styles/tailwind.css'`)
   api.render('./template')
-
-  if (options.replaceConfig) {
-    const filename = 'tailwind.config.js'
-    delete api.generator.files[filename]
-    const configPath = path.join(api.generator.context, filename)
-    try {
-      fs.unlinkSync(configPath)
-    } catch (error) {
-      throw new Error(error)
-    }
-  }
-
-  console.log(options.initConfig)
-  if (options.initConfig && options.replaceConfig !== false) {
-    api.onCreateComplete(() => {
-      generateConfig(options.initConfig)
-    })
-  }
 }
