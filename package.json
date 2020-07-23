@@ -1,0 +1,31 @@
+{
+  "name": "@ycmfe/vue-cli-plugin-cactus-tailwind",
+  "version": "1.0.0",
+  "description": "cactus tailwind plugin",
+  "files": [
+    "index.js",
+    "generator",
+    "prompts.js",
+    "purgecss"
+  ],
+  "keywords": [
+    "vue",
+    "cli",
+    "cactus",
+    "tailwind"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ycmfe/vue-cli-plugin-cactus-tailwind.git"
+  },
+  "homepage": "https://github.com/ycmfe/vue-cli-plugin-cactus-tailwind.git#readme",
+  "author": "zhiqiang",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "tailwindcss": "^1.5.2"
+  }
+}
