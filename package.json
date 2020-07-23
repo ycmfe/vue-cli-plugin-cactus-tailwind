@@ -1,6 +1,6 @@
 {
   "name": "@ycmfe/vue-cli-plugin-cactus-tailwind",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "cactus tailwind plugin",
   "files": [
     "index.js",
