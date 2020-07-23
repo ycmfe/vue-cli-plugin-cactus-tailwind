@@ -34,7 +34,7 @@ function generateConfig(option) {
     args.push('--full')
   }
   const { spawnSync } = require('child_process')
-  const tailwind = path.resolve('./node_modules/.bin/tailwind')
+  const tailwind = path.resolve('./node_modules/.bin/tailwindcss')
   spawnSync(tailwind, args, { shell: process.platform === 'win32' })
 }
 
@@ -68,6 +68,7 @@ module.exports = (api, options) => {
     }
   }
 
+  console.log(options.initConfig)
   if (options.initConfig && options.replaceConfig !== false) {
     api.onCreateComplete(() => {
       generateConfig(options.initConfig)
