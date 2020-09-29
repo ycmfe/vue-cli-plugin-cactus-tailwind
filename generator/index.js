@@ -34,7 +34,6 @@ module.exports = (api, options) => {
     postcss: {
       plugins: {
         tailwindcss: {},
-        '@ycmfe/vue-cli-plugin-cactus-tailwind/purgecss': {},
         autoprefixer: {},
       },
     },
