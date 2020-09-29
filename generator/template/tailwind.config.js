@@ -2,7 +2,7 @@ module.exports = {
   future: {
     purgeLayersByDefault: true,
   },
-  purge: [],
+  purge: ['./src/**/*.html', './src/**/*.vue', './src/**/*.jsx', './src/**/*.tsx'],
   theme: {
     extend: {},
   },
